@@ -1,2 +1,0 @@
-# ChainYardBlock
-Created with CodeSandbox
