@@ -9,7 +9,7 @@ export const HomePageSection = props => {
       <section>
         <Heading2>See your list of blocks and transaction here</Heading2>
         
-        <BlockList />
+        <BlockList {...props}/>
       </section>
     </HomePageContainer>
   );

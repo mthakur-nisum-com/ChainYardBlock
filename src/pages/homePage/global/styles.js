@@ -19,6 +19,7 @@ export const BlockListContainer = styled.section`
     li {
       flex: 1 1 calc(100% - 90%);
       list-style: none;
+      text-align: center;
       padding: 20px;
       background-color: #0a3969;
       color: #fff;
@@ -27,12 +28,13 @@ export const BlockListContainer = styled.section`
       // display: inline-block;
       margin-right: 20px;
       margin-bottom: 20px;
+      box-shadow:  1px 6px 24px #000;
       a {
         text-decoration: none;
         color:#FFF;
       }
       &:hover {
-        box-shadow:  1px 6px 24px #000;
+       
         position: relative;
         top: -6px;
       }

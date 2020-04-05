@@ -25,6 +25,7 @@ export const PaginationHeader = styled.section`
                 background-color:#FFF;
                 padding: 0;
                 margin-right: 20px;
+                box-shadow: none;
             }
             &:hover {
                 top: 0;

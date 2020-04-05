@@ -11,17 +11,9 @@ import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { Pagination, AppPrimaryBtn, AppSuccessBtn } from '../../../common';
 
-const PagedData = ({ items = [] }) => {
-  return (<ul>
-    {items.map(({ hash }, idx) => (
-      <li key={idx}>
-        <Link to={`/blockDetails/${hash}`}>{hash.substring(hash.length - 3, hash.length)}</Link>
-      </li>
-    ))}
-  </ul>)
-};
 
-export const BlockList = ({ blocks = [], updateBlocks }) => {
+
+export const BlockList = ({ blocks = [], updateBlocks, ...opts }) => {
   const getBlocks = async () => {
     const resultList = await fetchBlocks();
     console.log(resultList)
@@ -30,8 +22,17 @@ export const BlockList = ({ blocks = [], updateBlocks }) => {
   };
   const getLatest = async () => {
     const result = await getLatestBlock();
-    updateBlocks(new Array({...result}));
+    updateBlocks(new Array({ ...result }));
   }
+  const PagedData = ({ items = [] }) => {
+    return (<ul>
+      {items.map(({ hash }, idx) => (
+        <li key={idx} onClick={e => opts.history.push(`/blockDetails/${hash}`)}>
+          {hash.substring(hash.length - 3, hash.length)}
+        </li>
+      ))}
+    </ul>)
+  };
   return (
     <BlockListContainer>
       <BtnContainer>
@@ -42,10 +43,10 @@ export const BlockList = ({ blocks = [], updateBlocks }) => {
           Latest block
         </AppSuccessBtn>
       </BtnContainer>
-      {blocks.length > 0 && <Pagination data={blocks} itemsPerPage={25}>
+      {blocks.length > 0 && <Pagination data={blocks} itemsPerPage={20}>
         <PagedData />
       </Pagination>}
-      
+
     </BlockListContainer>
   );
 };
