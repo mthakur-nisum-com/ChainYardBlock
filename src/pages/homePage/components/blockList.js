@@ -24,12 +24,13 @@ const PagedData = ({ items = [] }) => {
 export const BlockList = ({ blocks = [], updateBlocks }) => {
   const getBlocks = async () => {
     const resultList = await fetchBlocks();
+    console.log(resultList)
     updateBlocks(resultList);
 
   };
   const getLatest = async () => {
     const result = await getLatestBlock();
-    updateBlocks(result);
+    updateBlocks(new Array({...result}));
   }
   return (
     <BlockListContainer>
@@ -41,9 +42,10 @@ export const BlockList = ({ blocks = [], updateBlocks }) => {
           Latest block
         </AppSuccessBtn>
       </BtnContainer>
-      {blocks.length > 0 && <Pagination data={blocks} itemsPerPage={20}>
+      {blocks.length > 0 && <Pagination data={blocks} itemsPerPage={25}>
         <PagedData />
       </Pagination>}
+      
     </BlockListContainer>
   );
 };
