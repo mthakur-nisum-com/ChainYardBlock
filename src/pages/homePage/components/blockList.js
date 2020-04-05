@@ -43,10 +43,12 @@ export const BlockList = ({ blocks = [], updateBlocks, ...opts }) => {
           Latest block
         </AppSuccessBtn>
       </BtnContainer>
-      {blocks.length > 0 && <Pagination data={blocks} itemsPerPage={20}>
+      {blocks.length > 20 && <Pagination data={blocks} itemsPerPage={20}>
         <PagedData />
       </Pagination>}
-
+      {blocks.length <= 20 && <Pagination data={blocks} itemsPerPage={20}>
+        <PagedData items={blocks} />
+      </Pagination>}
     </BlockListContainer>
   );
 };
