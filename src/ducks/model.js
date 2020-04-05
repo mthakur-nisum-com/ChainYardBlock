@@ -3,5 +3,5 @@ export const blockChainDataModel = () => ({
   latestBlock: null,
   transactions: [],
   currentTransaction: null,
-  currentBlock: null
+  currentBlock: null,
 });

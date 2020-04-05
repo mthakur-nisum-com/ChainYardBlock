@@ -1,5 +1,5 @@
-import React from "react";
 import { HomePageSection } from "../pages/homePage";
+import { BlockDetailDashboard } from '../pages/blockDetails'
 export const appRoutes = [
   {
     path: "/",
@@ -7,6 +7,6 @@ export const appRoutes = [
   },
   {
     path: "/blockDetails/:id",
-    Component: () => <div>block details page</div>
+    Component: BlockDetailDashboard
   }
 ];

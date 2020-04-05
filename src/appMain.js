@@ -1,6 +1,6 @@
 import React from "react";
 import "./styles.css";
-import { Route, BrowserRouter as Router, withRouter } from "react-router-dom";
+import { Route, BrowserRouter as Router } from "react-router-dom";
 import { appRoutes, appStore } from "./ducks";
 import { Provider } from "react-redux";
 import { LayoutContainer } from "./common";

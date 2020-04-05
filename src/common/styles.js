@@ -23,6 +23,11 @@ export const AppPrimaryBtn = styled(DefaultButton)`
   color: #fff;
 `;
 
+export const AppSuccessBtn = styled(DefaultButton)`
+    color: #FFF;
+    background-color: #5daf42;
+    border: 1px solid #5daf42;
+`;
 export const LayoutContainer = styled.section`
   width: 920px;
   margin: 40px auto 0;
